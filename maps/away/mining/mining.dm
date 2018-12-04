@@ -14,9 +14,9 @@
 		"nav_cluster_6",
 		"nav_cluster_7"
 	)
-	known = 0
-	//start_x = 4
-	//start_y = 5
+	known = 1
+	start_x = 4
+	start_y = 5
 
 /datum/map_template/ruin/away_site/mining_asteroid
 	name = "Mining - Asteroid"

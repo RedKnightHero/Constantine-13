@@ -1,23 +1,5 @@
 #include "casino_areas.dm"
-#include "casino_jobs.dm"
 #include "../mining/mining_areas.dm"
-
-/obj/effect/submap_landmark/joinable_submap/casino
-	name = "IPV Casino"
-	archetype = /decl/submap_archetype/derelict/casino
-
-/decl/submap_archetype/derelict/casino
-	descriptor = "Q.U.I.E.T Unit Project only"
-	map = "IPV Casino"
-	crew_jobs = list(
-		/datum/job/submap/casino_leader,
-		/datum/job/submap/casino_pilot,
-		/datum/job/submap/casino_soldier,
-		/datum/job/submap/casino_doctor,
-		/datum/job/submap/casino_engineer,
-		/datum/job/submap/casino_survivor
-	)
-	whitelisted_species = list(SPECIES_HUMAN)
 
 /obj/effect/overmap/ship/casino
 	name = "passenger liner"
@@ -33,7 +15,6 @@
 		"nav_casino_4",
 		"nav_casino_antag",
 		"nav_casino_hangar",
-		"nav_casino_west_dock"
 	)
 	initial_restricted_waypoints = list(
 		"Casino Cutter" = list("nav_casino_hangar"),
@@ -48,7 +29,7 @@
 	id = "awaysite_casino"
 	description = "A casino ship!"
 	suffixes = list("casino/casino.dmm")
-	cost = 10
+	cost = 1
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/casino_cutter)
 
 /obj/effect/shuttle_landmark/nav_casino/nav1
@@ -73,13 +54,14 @@
 
 /datum/shuttle/autodock/overmap/casino_cutter
 	name = "Casino Cutter"
-	shuttle_area = /area/casino/casino_cutter
-	dock_target = "casino_cutter"
-	current_location = "nav_casino_hangar"
+	warmup_time = 15
 	move_time = 60
-	warmup_time = 5
-	fuel_consumption = 3
+	shuttle_area = /area/casino/casino_cutter
+	current_location = "nav_casino_hangar"
 	landmark_transition = "nav_casino_transit"
+	fuel_consumption = 0.5//it's small
+	range = 1
+	defer_initialisation = TRUE
 
 /obj/effect/shuttle_landmark/nav_casino/cutter_hangar
 	name = "Casino Hangar"
@@ -94,10 +76,6 @@
 /obj/machinery/computer/shuttle_control/explore/casino_cutter
 	name = "cutter control console"
 	shuttle_tag = "Casino Cutter"
-
-/obj/effect/shuttle_landmark/nav_casino/west_port
-	name = "Casino West Docking Port"
-	landmark_tag = "nav_casino_west_dock"
 
 /obj/structure/casino/roulette
 	name = "roulette"

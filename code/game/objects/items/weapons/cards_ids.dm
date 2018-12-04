@@ -447,6 +447,12 @@ var/const/NO_EMAG_ACT = -50
 	icon_state = "sciGold"
 	job_access_type = /datum/job/rd
 
+/obj/item/weapon/card/id/cargo
+	name = "identification card"
+	desc = "A card issued to cargo staff."
+	icon_state = "cargo"
+	job_access_type = /datum/job/cargo_tech
+
 /obj/item/weapon/card/id/cargo/mining
 	job_access_type = /datum/job/mining
 
@@ -497,33 +503,3 @@ var/const/NO_EMAG_ACT = -50
 /obj/item/weapon/card/id/merchant/leader
 	desc = "A card issued to Merchant Leaders, indicating their right to sell and buy goods."
 	access = list(access_merchant, access_merchant_leader)
-
-// Constantine
-/obj/item/weapon/card/id/constantine/cargo/head_of_cargo
-	name = "identification card"
-	desc = "A card which represents service and planning."
-	icon_state = "cargoGold"
-	job_access_type = /datum/job/constantine/head_of_cargo
-
-/obj/item/weapon/card/id/constantine/cargo/cargo_worker
-	name = "identification card"
-	desc = "A card which represents service and planning."
-	icon_state = "cargoGold"
-	job_access_type = /datum/job/constantine/cargo_worker
-
-/obj/item/weapon/card/id/constantine/roboticist
-	name = "identification card"
-	desc = "A card which represents service and planning."
-	icon_state = "sci"
-	job_access_type = /datum/job/roboticist
-
-/obj/item/weapon/card/id/constantine/researcher
-	name = "identification card"
-	desc = "A card which represents service and planning."
-	icon_state = "sci"
-	job_access_type = /datum/job/researcher
-
-/obj/item/weapon/card/id/constantine/bartender
-	name = "identification card"
-	desc = "A card which represents service and planning."
-	job_access_type = /datum/job/constantine/bartender
